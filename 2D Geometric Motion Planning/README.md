@@ -28,7 +28,8 @@ An instance of the _Tree_ class, implemented in tree.py, will hold our random tr
 - _radiusOfNeighborhood_ is a parameter which specifies the distance from a point to look for in order to find the neighborhood, while executing the RRT* algorithm. The value used is 0.5. Another possibility is to replace this value with log of the number of vertices in the tree, but that is not used in this implementation.
 - For each node, the dictionary _costs_ holds the cost from start to that node, measured as Euclidean path length. The costs are only considered for RRT* implementation, since the algorithm tries to achieve asymptotic optimality.
 - The method _distance_ is used to compute Euclidean distance between any given pair of coordinates in the workspace. All distance computations for this implementation are Euclidean distances. 
-- We continue iterating until either the region of success around the goal is reached, or _n_iter_ = 1000 number of loops. 
+- We continue iterating until either the region of success around the goal is reached, or _n_iter_ = 1000 number of loops.  
+- We finally backtrack from the goal node until the root using _parent_ method to trace the start to goal path.  
 
 For the first problem above (first line in probs_01.txt), the figures below show the path returned by a run of the **RRT** implementation (green line), the corresponding samples collected during the iterations (black dots), and the final state of the search tree in the same workspace. The path from start (0.1, 0.1) to goal (6.0, 8.0) discovered for this run is (0.1, 0.1), (1.8, 0.1), (1.8, 1.6), (0.1, 3.3), (0.1, 9.6), (2.9, 9.6), (9.2, 9.6), (7.3, 9.6), (6.4, 8.7), (5.8, 8.1), (6.0, 8.0).  
 
