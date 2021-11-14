@@ -37,7 +37,7 @@ For the first problem above (first line in probs_01.txt), the figures below show
 <img width="1440" alt="q1_rrt_sample_1" src="https://user-images.githubusercontent.com/10013303/141657895-849d1e38-d061-4d6e-96d0-15e5c9d3b8e4.png">
 <img width="1440" alt="q1_rrt_tree_1" src="https://user-images.githubusercontent.com/10013303/141657899-0899eeb0-05ec-4736-a419-b45c43e045dd.png">
 
-The analysis for RRT over 60 runs is shown below as well as in figure. **Remember to set the variable _analysis_mode_ to True to generate these results. For a usual run of the algorithm, the variable should be set to False.**  
+The analysis for RRT over 60 runs is shown below as well as in the figure. **Remember to set the variable _analysis_mode_ to True to generate these results. For a usual run of the algorithm, the variable should be set to False.**  
 
 - Total number of runs = 60
 - Success rate in percentage = 78.33333333333333
@@ -52,7 +52,7 @@ For the first problem above (first line in probs_01.txt), the figures below show
 <img width="1440" alt="q1_rrt_star_sample_1" src="https://user-images.githubusercontent.com/10013303/141658179-90ce71e2-aa86-4c36-8733-ed5474c76bb1.png">
 <img width="1440" alt="q1_rrt_star_tree_1" src="https://user-images.githubusercontent.com/10013303/141658187-0c96843d-e7c0-458a-b19b-c0d1eba1e3e2.png">
 
-The analysis for RRT* over 60 runs is shown below as well as in figure. **Remember to set the variable _analysis_mode_ to True to generate these results. For a usual run of the algorithm, the variable should be set to False.**  
+The analysis for RRT* over 60 runs is shown below as well as in the figure. **Remember to set the variable _analysis_mode_ to True to generate these results. For a usual run of the algorithm, the variable should be set to False.**  
 
 - Total number of runs = 60
 - Success rate in percentage = 100.0
