@@ -13,13 +13,13 @@ Figures below show the visualization for the obstacles, the world boundaries, th
 <img width="1440" alt="problem1" src="https://user-images.githubusercontent.com/10013303/141657614-9970b74f-1a6b-475d-ba3b-ffe9884ffe63.png">
 <img width="1440" alt="problem2" src="https://user-images.githubusercontent.com/10013303/141657617-3ac7ab81-066a-4dc0-9ce0-f41ac10d0174.png">
 
-The sample method in sampler.py generates random samples within the 10 X 10 workspace (boundaries included), with uniform probability over the entire space. In collision.py, we convert the robot vertices to world coordinates and translate it to a given point to check whether it is collision free at that point. It is deemed collision free if all three of the checks below are passed.  
+The _sample_ method in sampler.py generates random samples within the 10 X 10 workspace (boundaries included), with uniform probability over the entire space. In collision.py, we convert the robot vertices to world coordinates and translate it to a given point to check whether it is collision free at that point. It is deemed collision free if all three of the checks below are passed.  
 
 - The new vertex coordinates stay inside the $10 \times 10$ workspace.
 - The new robot coordinates are not completely inside any of the obstacles.
 - There is no intersection between any of the robot edges and any of the obstacle edges, for all the obstacles.  
 
-An instance of the Tree class, implemented in tree.py, will hold our random tree that rapidly explores the workspace during sampling based motion planning. The parameters and key implementation specifics for the same are listed below.  
+An instance of the _Tree_ class, implemented in tree.py, will hold our random tree that rapidly explores the workspace during sampling based motion planning. The parameters and key implementation specifics for the same are listed below.  
 
 - A hash set named _vertices_ is used to store all the tree nodes.
 - Tree _edges_ are specified by entries in a Python defaultdict. For each key-value pair in this dictionary, there is an edge between key and value, with key as the parent node. Defaultdict is used because it allows duplicate keys, since one node can have multiple children in a tree.
@@ -27,7 +27,8 @@ An instance of the Tree class, implemented in tree.py, will hold our random tree
 - _stepSize_ is a parameter used for the discretized version of the _extend_ method implementation. It defines the size of each step taken, in order to extend an edge from a tree node towards a valid sample (subject to not hitting an obstacle in between and not overshooting the sample point). A value of 0.1 is used for both RRT and RRT*.
 - _radiusOfNeighborhood_ is a parameter which specifies the distance from a point to look for in order to find the neighborhood, while executing the RRT* algorithm. The value used is 0.5. Another possibility is to replace this value with log of the number of vertices in the tree, but that is not used in this implementation.
 - For each node, the dictionary _costs_ holds the cost from start to that node, measured as Euclidean path length. The costs are only considered for RRT* implementation, since the algorithm tries to achieve asymptotic optimality.
-- The method _distance_ is used to compute Euclidean distance between any given pair of coordinates in the workspace. All distance computations for this implementation are Euclidean distances.  
+- The method _distance_ is used to compute Euclidean distance between any given pair of coordinates in the workspace. All distance computations for this implementation are Euclidean distances. 
+- We continue iterating until either the region of success around the goal is reached, or _n_iter_ = 1000 number of loops. 
 
 For the first problem above (first line in probs_01.txt), the figures below show the path returned by a run of the **RRT** implementation (green line), the corresponding samples collected during the iterations (black dots), and the final state of the search tree in the same workspace. The path from start (0.1, 0.1) to goal (6.0, 8.0) discovered for this run is (0.1, 0.1), (1.8, 0.1), (1.8, 1.6), (0.1, 3.3), (0.1, 9.6), (2.9, 9.6), (9.2, 9.6), (7.3, 9.6), (6.4, 8.7), (5.8, 8.1), (6.0, 8.0).  
 
