@@ -23,7 +23,7 @@ In the _Tree_ class the _distance_ method is updated, where instead of Euclidean
 - _radiusOfSuccess_ is set to 0.8 for both RRT and RRT*.
 - _stepSize_ of 0.1 is used for both RRT and RRT*, to incrementally move the x,y coordinates as well as smaller of the two angles in the extend function (subject to not hitting an obstacle in between and not overshooting the sample point).
 - radiusOfNeighborhood is set to 1.5 for RRT*.
-- _n_iter_ is set to 10000 for both RRT and RRT*.  
+- _iter_n_ is set to 10000 for both RRT and RRT*.  
 
 For the problem seen above (first line in probs_01.txt), the figure below shows the path returned by a run of the **RRT** implementation (green line). The path from start pose (2.0, 2.0, 0.0) to goal pose (7.0, 8.0, 5.57) discovered for this run is (2.0, 2.0, 0.0), (2.0, 2.0, -0.1), (2.0, 2.2, -0.13), (2.0, 2.2, -0.14), (2.0, 2.2, -0.22), (2.0, 2.2, -0.26), (2.0, 2.2, -0.43), (2.0, 0.4, -0.52), (4.7, 0.4, -0.59), (8.7, 0.4, -0.61), (8.7, 4.0, -0.64), (9.7, 5.0, 0.56), (9.7, 7.9, 0.53), (8.0, 9.6, 0.43), (8.0, 8.4, 0.41), (6.8, 8.4, 0.36), (6.8, 8.4, 0.26), (7.2, 8.0, 0.23), (7.2, 8.0, 0.21), (7.2, 8.0, 0.18), (7.2, 8.0, 0.11), (7.0, 8.0, 5.57).  
 
