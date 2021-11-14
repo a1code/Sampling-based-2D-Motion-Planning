@@ -61,4 +61,4 @@ The analysis for RRT* over 60 runs is shown below as well as in the figure. **Re
 
 <img width="1440" alt="q1_rrt_star_analysis" src="https://user-images.githubusercontent.com/10013303/141658232-dac1c38e-74ef-4699-8e41-b15a1a08b157.png">
 
-_Comparing the two algorithms, we do notice that RRT* creates relatively straighter paths. It vines around obstacles, while moving fairly straight through free spaces. However, it ends up taking more iterations to converge to the success region, since the rewiring process makes it computationally more expensive._  
+_We notice that RRT* creates relatively straighter paths. It vines around obstacles, while moving fairly straight through free spaces._  
